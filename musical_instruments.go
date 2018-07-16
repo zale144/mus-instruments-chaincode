@@ -37,7 +37,7 @@ func (m *MusicalInstrumentSales) Init(stub shim.ChaincodeStubInterface) pb.Respo
 		"initInstrument":                  m.initInstrument,
 		"transferInstrument":              m.transferInstrument,
 		"readInstrument":                  m.readInstrument,
-		"deleteInstrument": 			   m.deleteInstrument,
+		"deleteInstrument":				   m.deleteInstrument,
 	}
 	return shim.Success(nil)
 }
