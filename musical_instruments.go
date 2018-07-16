@@ -3,26 +3,26 @@ package instruments
 import (
 	"encoding/json"
 	"fmt"
-	"strconv"
-	"strings"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	pb "github.com/hyperledger/fabric/protos/peer"
 	"log"
+	"strconv"
+	"strings"
 )
 
 type MusicalInstrumentSales struct {
-	methods map[string]func(APIstub shim.ChaincodeStubInterface, args []string)(pb.Response)
+	methods map[string]func(APIstub shim.ChaincodeStubInterface, args []string) pb.Response
 }
 
 type Instrument struct {
-	Type  	  string `json:"type"`
-	Brand	  string `json:"brand"`
-	Model	  string `json:"model"`
-	Color	  string `json:"color"`
-	YearMade  int    `json:"yearMade"`
-	Owner	  string `json:"owner"`
-	Price	  float64 `json:"price"`
-	SerialNo  string `json:"serialNo"`
+	Type     string  `json:"type"`
+	Brand    string  `json:"brand"`
+	Model    string  `json:"model"`
+	Color    string  `json:"color"`
+	YearMade int     `json:"yearMade"`
+	Owner    string  `json:"owner"`
+	Price    float64 `json:"price"`
+	SerialNo string  `json:"serialNo"`
 }
 
 func main() {
@@ -33,11 +33,11 @@ func main() {
 }
 
 func (m *MusicalInstrumentSales) Init(stub shim.ChaincodeStubInterface) pb.Response {
-	m.methods = map[string]func(APIstub shim.ChaincodeStubInterface, args []string)(pb.Response){
-		"initInstrument":                  m.initInstrument,
-		"transferInstrument":              m.transferInstrument,
-		"readInstrument":                  m.readInstrument,
-		"deleteInstrument":				   m.deleteInstrument,
+	m.methods = map[string]func(APIstub shim.ChaincodeStubInterface, args []string) pb.Response{
+		"initInstrument":     m.initInstrument,
+		"transferInstrument": m.transferInstrument,
+		"readInstrument":     m.readInstrument,
+		"deleteInstrument":   m.deleteInstrument,
 	}
 	return shim.Success(nil)
 }
