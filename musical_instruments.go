@@ -1,19 +1,3 @@
-// ====CHAINCODE EXECUTION SAMPLES (CLI) ==================
-
-// ==== Invoke instruments ====
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["initInstrument","guitar","Gibson","Les Paul","black","1965","Jimmy Page","10000.01","serialNo"]}'
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["initInstrument","instrument2","red","50","tom"]}'
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["initInstrument","instrument3","blue","70","tom"]}'
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["transferInstrument","instrument2","jerry"]}'
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["transferInstrumentsBasedOnColor","blue","jerry"]}'
-// peer chaincode invoke -C myc1 -n instruments -c '{"Args":["delete","instrument1"]}'
-
-// ==== Query instruments ====
-// peer chaincode query -C myc1 -n instruments -c '{"Args":["readInstrument","instrument1"]}'
-// peer chaincode query -C myc1 -n instruments -c '{"Args":["getInstrumentsByRange","instrument1","instrument3"]}'
-// peer chaincode query -C myc1 -n instruments -c '{"Args":["getHistoryForInstrument","instrument1"]}'
-
-
 package instruments
 
 import (
